@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand color system */
+  --color-white: #ffffff;
+  --color-pearl: #f7f7f5;
+  --color-light-gray: #e5e7eb;
+  --color-mid-gray: #9ca3af;
+  --color-charcoal: #1f2226;
+  --color-charcoal-soft: #2a2d31;
+  --color-charcoal-deep: #14161a;
+
+  --color-royal-dark: #1e3a8a;
+  --color-royal: #2547b8;
+  --color-royal-light: #3b82f6;
+  --color-royal-glow: #60a5fa;
+
+  /* Typography */
+  --font-display: "Fraunces", "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Inter", "Geist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-eyebrow: "Inter", system-ui, sans-serif;
+
+  /* Custom luxury easing */
+  --ease-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-glide: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --foreground: 31 34 38;
+    --background: 255 255 255;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-white);
+    color: var(--color-charcoal);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: var(--color-royal-dark);
+    color: var(--color-white);
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-pearl);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-charcoal-soft);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-royal-dark);
+  }
+}
+
+/*
+  All custom classes below live in @layer components so Tailwind utility
+  classes (like `absolute`, `inset-0`, `scale-110`) always win the cascade
+  when applied to the same element. Without this, plain class definitions
+  outside any layer would override Tailwind utilities.
+*/
+@layer components {
+  /* ----- Utility helpers ----- */
+  .eyebrow {
+    font-family: var(--font-eyebrow);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+
+  .container-luxe {
+    width: 100%;
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-luxe {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-luxe {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  /* ----- Granite hero background -----
+     Note: positioning is controlled by Tailwind utilities on the element,
+     so we DO NOT set position here. Pseudo-elements use absolute against
+     the host (which becomes positioned via the utility class).
+  */
+  .granite-bg {
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(94, 130, 110, 0.55) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 70%, rgba(60, 90, 75, 0.45) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 50%, rgba(220, 220, 215, 0.9) 0%, rgba(170, 175, 170, 0.85) 45%, rgba(80, 90, 85, 0.95) 100%),
+      linear-gradient(135deg, #d8d8d3 0%, #b6bcb6 35%, #6f7c74 70%, #2f3a35 100%);
+    background-blend-mode: overlay, overlay, normal, normal;
+    isolation: isolate;
+  }
+
+  .granite-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.35) 0px, transparent 1.5px),
+      radial-gradient(circle at 27% 42%, rgba(40, 60, 50, 0.55) 0px, transparent 2px),
+      radial-gradient(circle at 48% 12%, rgba(255, 255, 255, 0.4) 0px, transparent 1px),
+      radial-gradient(circle at 62% 65%, rgba(50, 80, 65, 0.5) 0px, transparent 2.5px),
+      radial-gradient(circle at 81% 32%, rgba(255, 255, 255, 0.3) 0px, transparent 1px),
+      radial-gradient(circle at 33% 78%, rgba(60, 95, 75, 0.45) 0px, transparent 2px),
+      radial-gradient(circle at 92% 88%, rgba(255, 255, 255, 0.32) 0px, transparent 1.5px);
+    background-size: 220px 220px, 280px 280px, 180px 180px, 320px 320px, 200px 200px, 260px 260px, 240px 240px;
+    mix-blend-mode: overlay;
+    opacity: 0.85;
+    pointer-events: none;
+  }
+
+  .granite-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(20, 22, 26, 0.35) 0%, rgba(20, 22, 26, 0.15) 30%, rgba(20, 22, 26, 0.55) 100%);
+    pointer-events: none;
+  }
+
+  /* ----- Marquee animation ----- */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+
+  /* ----- Shimmer (subtle) ----- */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  /* ----- Subtle gradient text helper ----- */
+  .text-royal-gradient {
+    background: linear-gradient(135deg, var(--color-royal-dark) 0%, var(--color-royal-light) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ----- Reveal on view (fallback when not using Framer Motion) ----- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 700ms var(--ease-luxury), transform 700ms var(--ease-luxury);
+  }
+  .reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ----- Button base ----- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.6rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border-radius: 9999px;
+    transition: transform 320ms var(--ease-luxury), background-color 320ms var(--ease-luxury), color 320ms var(--ease-luxury), box-shadow 320ms var(--ease-luxury), border-color 320ms var(--ease-luxury);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--color-royal-dark);
+    color: var(--color-white);
+    box-shadow: 0 10px 40px -12px rgba(30, 58, 138, 0.55);
+  }
+  .btn-primary:hover {
+    background: var(--color-royal-light);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 50px -10px rgba(59, 130, 246, 0.6);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-charcoal);
+    border: 1px solid rgba(31, 34, 38, 0.25);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-royal-dark);
+    color: var(--color-royal-dark);
+    transform: translateY(-2px);
+  }
+  .btn-on-dark {
+    background: transparent;
+    color: var(--color-white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .btn-on-dark:hover {
+    background: var(--color-white);
+    color: var(--color-charcoal);
+    border-color: var(--color-white);
+    transform: translateY(-2px);
+  }
+
+  /* ----- Section number badge ----- */
+  .section-num {
+    font-family: var(--font-sans);
+    font-variant-numeric: tabular-nums;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    color: var(--color-royal-dark);
+  }
+
+  /* ----- Subtle glow ring ----- */
+  .ring-luxe {
+    box-shadow: 0 0 0 1px rgba(31, 34, 38, 0.06), 0 30px 60px -25px rgba(31, 34, 38, 0.25);
+  }
+
+  /* Disable user-select on decorative numbers */
+  .no-select {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
