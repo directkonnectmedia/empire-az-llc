@@ -38,8 +38,8 @@ export const SERVICES = [
     eyebrow: "Shower Doors",
     title: "Glass shower doors",
     body: "Frameless and semi-frameless shower glass tailored to your space — measured, fabricated, and installed with a flawless fit.",
-    image: "/countertops.png",
-    alt: "Glass shower doors and panels",
+    image: "/shower/shower 5.jpg",
+    alt: "Neo-angle glass shower enclosure with brushed gold hardware",
   },
 ];
 
