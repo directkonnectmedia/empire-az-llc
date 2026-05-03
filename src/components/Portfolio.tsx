@@ -1,22 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { PORTFOLIO, PORTFOLIO_FILTERS } from "@/lib/brand";
+import { PORTFOLIO } from "@/lib/brand";
 import Reveal from "./Reveal";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Portfolio() {
-  const [filter, setFilter] = useState<string>("All");
-
-  const items =
-    filter === "All"
-      ? PORTFOLIO
-      : PORTFOLIO.filter((p) => p.category === filter);
-
   return (
     <section
       id="work"
@@ -44,28 +36,6 @@ export default function Portfolio() {
           </div>
         </Reveal>
 
-        {/* Filter pills */}
-        <Reveal delay={0.1}>
-          <div className="flex flex-wrap items-center gap-2 mb-12">
-            {PORTFOLIO_FILTERS.map((f) => {
-              const active = f === filter;
-              return (
-                <button
-                  key={f}
-                  onClick={() => setFilter(f)}
-                  className={`relative px-5 py-2.5 rounded-full text-xs font-medium tracking-wide transition-all duration-500 border ${
-                    active
-                      ? "bg-white text-[color:var(--color-charcoal)] border-white"
-                      : "bg-transparent text-white/70 border-white/20 hover:border-white/50 hover:text-white"
-                  }`}
-                >
-                  {f}
-                </button>
-              );
-            })}
-          </div>
-        </Reveal>
-
         {/* Grid */}
         <LayoutGroup>
           <motion.div
@@ -74,7 +44,7 @@ export default function Portfolio() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           >
             <AnimatePresence mode="popLayout">
-              {items.map((p, i) => (
+              {PORTFOLIO.map((p, i) => (
                 <motion.a
                   key={p.image}
                   href="#contact"

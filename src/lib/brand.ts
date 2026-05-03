@@ -44,69 +44,24 @@ export const SERVICES = [
 ];
 
 export const PORTFOLIO = [
-  {
-    title: "Estate Marble Island",
-    city: "Scottsdale, AZ",
-    category: "Full Renovations",
-    image: "/portfolio/04-estate-marble-island.jpg",
-  },
-  {
-    title: "Calacatta Waterfall Bath",
-    city: "Phoenix, AZ",
-    category: "Countertops",
-    image: "/portfolio/13-calacatta-waterfall.jpg",
-  },
-  {
-    title: "Indigo Vanity Suite",
-    city: "Tempe, AZ",
-    category: "Cabinets",
-    image: "/portfolio/07-indigo-vanity.jpg",
-  },
-  {
-    title: "Sage Pantry Corner",
-    city: "Surprise, AZ",
-    category: "Cabinets",
-    image: "/portfolio/08-sage-pantry-corner.jpg",
-  },
-  {
-    title: "Veined Marble Hearth",
-    city: "Mesa, AZ",
-    category: "Countertops",
-    image: "/portfolio/10-veined-marble-hearth.jpg",
-  },
-  {
-    title: "Calacatta Galley Kitchen",
-    city: "Arcadia, AZ",
-    category: "Countertops",
-    image: "/portfolio/06-calacatta-galley.jpg",
-  },
-  {
-    title: "Charcoal Laundry Suite",
-    city: "Mesa, AZ",
-    category: "Cabinets",
-    image: "/portfolio/01-charcoal-laundry.jpg",
-  },
-  {
-    title: "White Marble Refresh",
-    city: "Gilbert, AZ",
-    category: "Countertops",
-    image: "/portfolio/11-marble-refresh.jpg",
-  },
-  {
-    title: "Frame-Out Kitchen",
-    city: "Goodyear, AZ",
-    category: "Full Renovations",
-    image: "/portfolio/15-frame-out-kitchen.jpg",
-  },
-  {
-    title: "Petite Powder Vanity",
-    city: "Glendale, AZ",
-    category: "Cabinets",
-    image: "/portfolio/12-petite-vanity.jpg",
-  },
-];
-
-export const PORTFOLIO_FILTERS = ["All", "Full Renovations"];
+  { image: "/shower/shower.jpg" },
+  { image: "/shower/Shower door.jpg" },
+  { image: "/shower/Shower door 2.jpg" },
+  { image: "/shower/Shower 15.jpg" },
+  { image: "/shower/Shower 14.jpg" },
+  { image: "/shower/Shower 13.jpg" },
+  { image: "/shower/Shower 12.jpg" },
+  { image: "/shower/Shower 11.jpg" },
+  { image: "/shower/Shower 10.jpg" },
+  { image: "/shower/Shower 9.jpg" },
+  { image: "/shower/Shower 8.jpg" },
+  { image: "/shower/Shower 7.jpg" },
+  { image: "/shower/shower 6.jpg" },
+  { image: "/shower/shower 5.jpg" },
+  { image: "/shower/Shower 4.jpg" },
+  { image: "/shower/shower 3.jpg" },
+  { image: "/shower/shower 2.jpg" },
+] as const;
 
 export const TESTIMONIALS = [
   {
