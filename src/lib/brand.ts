@@ -30,7 +30,7 @@ export const SERVICES = [
     eyebrow: "Shower Enclosures",
     title: "Custom glass shower enclosures",
     body: "Custom glass shower enclosures. Made for you, by us.",
-    image: "/custom-cabinets.png",
+    image: "/shower/Shower door 2.jpg",
     alt: "Custom glass shower enclosure installation",
   },
   {
