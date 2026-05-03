@@ -6,7 +6,7 @@ type LogoProps = {
   withTagline?: boolean;
   className?: string;
   /**
-   * Optional override for the SR letters inside the badge. Accepts any
+   * Optional override for the EA letters inside the badge. Accepts any
    * CSS length (e.g. "1.4em", "20px"). Useful when the badge needs the
    * letters to feel more prominent in a specific context.
    */
@@ -21,17 +21,15 @@ const sizeMap = {
 };
 
 /**
- * SRMark — the always-blue circular SR badge.
+ * EmpireMark — circular EA badge (Empire AZ).
  *
  * Color treatment is intentionally locked: blue outline + blue letters on
- * a white interior, regardless of background. Scales with parent font-size
- * when the mark is sized via em/percentage classes (great for placing
- * inline inside large headings).
+ * a white interior, regardless of background.
  */
-export function SRMark({
+export function EmpireMark({
   className = "",
   ringed = true,
-  textScale = "0.46em",
+  textScale = "0.4em",
 }: {
   className?: string;
   ringed?: boolean;
@@ -39,7 +37,7 @@ export function SRMark({
 }) {
   return (
     <span
-      aria-label="SR Renovations logo"
+      aria-label="Empire AZ LLC logo"
       className={`relative inline-flex items-center justify-center rounded-full border-2 border-[color:var(--color-royal-dark)] bg-white text-[color:var(--color-royal-dark)] font-display font-semibold leading-none shadow-[0_8px_30px_-12px_rgba(30,58,138,0.4)] ${className}`}
       style={{ aspectRatio: "1 / 1" }}
     >
@@ -47,11 +45,11 @@ export function SRMark({
         aria-hidden="true"
         style={{
           fontSize: textScale,
-          letterSpacing: "-0.04em",
+          letterSpacing: "-0.06em",
           lineHeight: 1,
         }}
       >
-        SR
+        EA
       </span>
       {ringed && (
         <span
@@ -62,6 +60,9 @@ export function SRMark({
     </span>
   );
 }
+
+/** @deprecated Use EmpireMark — alias kept for any lingering imports. */
+export const SRMark = EmpireMark;
 
 export default function Logo({
   variant = "dark",
@@ -76,10 +77,10 @@ export default function Logo({
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      <SRMark className={s.mark} textScale={markTextScale} />
+      <EmpireMark className={s.mark} textScale={markTextScale} />
       <div className="flex flex-col leading-none">
         <span className={`font-display font-medium tracking-tight ${text} ${s.text}`}>
-          Renovations
+          Empire AZ
         </span>
         {withTagline && (
           <span
@@ -89,7 +90,7 @@ export default function Logo({
                 : "text-[color:var(--color-charcoal)]/55"
             } ${s.tag}`}
           >
-            LUXURY INTERIORS · LLC
+            LLC · LUXURY INTERIORS
           </span>
         )}
       </div>

@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SR Renovations, LLC | Luxury Custom Cabinets & Countertops in Arizona",
+  title: "Empire AZ LLC | Luxury Custom Cabinets & Countertops in Arizona",
   description:
-    "Bespoke kitchens, custom cabinetry, kitchen islands, rock slabs, countertops, and custom laundry rooms — handcrafted luxury home renovations across the Arizona Valley by Sergio and the SR Renovations team.",
+    "Bespoke kitchens, custom cabinetry, kitchen islands, rock slabs, countertops, and custom laundry rooms — handcrafted luxury home renovations across the Arizona Valley by Empire AZ LLC.",
   keywords: [
     "custom cabinets Arizona",
     "kitchen renovation Phoenix",
@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     "luxury home renovation",
     "custom kitchen island",
     "rock slab installation",
-    "SR Renovations LLC",
+    "Empire AZ LLC",
   ],
-  authors: [{ name: "SR Renovations, LLC" }],
+  authors: [{ name: "Empire AZ LLC" }],
   openGraph: {
-    title: "SR Renovations, LLC — Luxury Home Renovations",
+    title: "Empire AZ LLC — Luxury Home Renovations",
     description:
       "Bespoke kitchens, cabinetry, and stone work crafted for the Arizona Valley.",
     type: "website",

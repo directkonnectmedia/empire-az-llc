@@ -91,7 +91,7 @@ export default function Wizard() {
               <em className="not-italic text-royal-gradient">transformation</em>
             </h2>
             <p className="mt-6 text-[color:var(--color-charcoal)]/65 text-lg leading-relaxed">
-              Tell us about your project. A SR Renovations design specialist
+              Tell us about your project. An Empire AZ LLC design specialist
               will reach out within 24 hours.
             </p>
           </div>
@@ -351,7 +351,7 @@ export default function Wizard() {
                           onChange={(v) =>
                             setData((d) => ({ ...d, name: v }))
                           }
-                          placeholder="Sergio Rodriguez"
+                          placeholder="Your name"
                           required
                         />
                         <Field
@@ -360,7 +360,7 @@ export default function Wizard() {
                           onChange={(v) =>
                             setData((d) => ({ ...d, phone: v }))
                           }
-                          placeholder="(602) 350-3214"
+                          placeholder="602-614-2187"
                           required
                           type="tel"
                         />
@@ -413,7 +413,7 @@ export default function Wizard() {
                         Request received.
                       </h3>
                       <p className="text-[color:var(--color-charcoal)]/65 text-lg max-w-md mx-auto leading-relaxed">
-                        Thank you for reaching out. A SR Renovations design
+                        Thank you for reaching out. An Empire AZ LLC design
                         specialist will contact you shortly.
                       </p>
                     </motion.div>

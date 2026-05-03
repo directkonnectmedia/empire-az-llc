@@ -30,8 +30,8 @@ export default function Services() {
               </h2>
             </div>
             <p className="md:max-w-sm text-[color:var(--color-charcoal)]/65 leading-relaxed">
-              Every project is custom-designed and handcrafted by Sergio and his
-              team — no templates, no shortcuts, just refined work that lasts.
+              Every project is custom-designed and handcrafted by the Empire AZ
+              LLC team — no templates, no shortcuts, just refined work that lasts.
             </p>
           </div>
         </Reveal>

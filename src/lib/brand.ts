@@ -1,11 +1,11 @@
 export const BRAND = {
-  name: "SR Renovations, LLC",
-  shortName: "SR Renovations",
+  name: "Empire AZ LLC",
+  shortName: "Empire AZ",
   owner: "Sergio",
-  phone: "(602) 350-3214",
-  phoneHref: "tel:+16023503214",
-  email: "srrenovations@gmail.com",
-  emailHref: "mailto:srrenovations@gmail.com",
+  phone: "602-614-2187",
+  phoneHref: "tel:+16026142187",
+  email: "info@empireazllc.com",
+  emailHref: "mailto:info@empireazllc.com",
   hours: "Mon–Sat 9am–5pm",
   rocNumber: "ROC #XXXXXX",
   taglineMarquee: [
@@ -118,7 +118,7 @@ export const TESTIMONIALS = [
   {
     initials: "JD",
     quote:
-      "Sergio rebuilt our entire kitchen with custom cabinets and a granite island — flawless craftsmanship from start to finish. Truly luxury work.",
+      "Empire AZ LLC rebuilt our entire kitchen with custom cabinets and a granite island — flawless craftsmanship from start to finish. Truly luxury work.",
     name: "James D.",
     city: "Scottsdale, AZ",
   },
@@ -132,7 +132,7 @@ export const TESTIMONIALS = [
   {
     initials: "RK",
     quote:
-      "Our laundry room finally matches the rest of the home. SR Renovations delivered true luxury and treated our house like their own.",
+      "Our laundry room finally matches the rest of the home. Empire AZ LLC delivered true luxury and treated our house like their own.",
     name: "Robert K.",
     city: "Gilbert, AZ",
   },

@@ -25,8 +25,7 @@ export default function Footer() {
             <Logo variant="light" size="lg" withTagline />
             <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-md">
               Elevating Arizona homes through custom craftsmanship and luxury
-              interior renovations. Owned and operated by Sergio. Every detail,
-              built to last.
+              interior renovations. {BRAND.name} — every detail, built to last.
             </p>
             <a
               href={BRAND.phoneHref}

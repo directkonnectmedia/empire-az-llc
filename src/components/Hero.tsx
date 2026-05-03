@@ -13,7 +13,7 @@ import {
 import Image from "next/image";
 import Marquee from "./Marquee";
 import AnimatedNumber from "./AnimatedNumber";
-import { SRMark } from "./Logo";
+import { EmpireMark } from "./Logo";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -138,9 +138,9 @@ export default function Hero() {
               <MicroStat label="Consult" value="Always free" align="left" />
             </div>
 
-            <h1 className="flex items-center justify-center gap-3 md:gap-6 font-display font-medium text-white text-[clamp(2.6rem,11vw,10rem)] leading-[0.85] tracking-[-0.04em]">
-              <SRMark className="h-[0.95em] w-[0.95em] shrink-0" />
-              <span>Renovations</span>
+            <h1 className="flex flex-wrap items-center justify-center gap-3 md:gap-6 font-display font-medium text-white text-[clamp(2.6rem,11vw,10rem)] leading-[0.85] tracking-[-0.04em]">
+              <EmpireMark className="h-[0.95em] w-[0.95em] shrink-0" />
+              <span>Empire AZ</span>
             </h1>
             <div className="mt-4 flex items-center justify-center gap-4">
               <span className="h-px w-16 bg-white/50" />
