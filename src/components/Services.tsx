@@ -42,44 +42,6 @@ export default function Services() {
             <ServiceRow key={s.num} service={s} reverse={i % 2 === 1} />
           ))}
         </div>
-
-        {/* Compact grid recap */}
-        <Reveal>
-          <div className="mt-32 md:mt-44 border-t border-black/10 pt-16">
-            <div className="flex items-center gap-3 mb-12">
-              <span className="eyebrow text-[color:var(--color-royal-dark)]">
-                AT A GLANCE
-              </span>
-              <span className="h-px flex-1 bg-black/10" />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {SERVICES.map((s, i) => (
-                <motion.div
-                  key={s.num}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{
-                    duration: 0.7,
-                    delay: i * 0.06,
-                    ease,
-                  }}
-                  className="group relative p-8 rounded-2xl bg-[color:var(--color-pearl)] hover:bg-white transition-all duration-500 ring-luxe overflow-hidden"
-                >
-                  <div className="flex items-start justify-between mb-6">
-                    <span className="section-num">{s.num}</span>
-                    <ArrowUpRight className="h-5 w-5 text-[color:var(--color-charcoal)]/30 group-hover:text-[color:var(--color-royal-dark)] group-hover:rotate-45 transition-all duration-500" />
-                  </div>
-                  <h3 className="font-display text-2xl mb-3">{s.title}</h3>
-                  <p className="text-sm text-[color:var(--color-charcoal)]/65 leading-relaxed">
-                    {s.body}
-                  </p>
-                  <span className="absolute bottom-0 left-0 h-px bg-[color:var(--color-royal-dark)] w-0 group-hover:w-full transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]" />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </Reveal>
       </div>
     </section>
   );

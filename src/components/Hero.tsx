@@ -26,7 +26,6 @@ export default function Hero() {
   });
   const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
   const yContent = useTransform(scrollYProgress, [0, 1], ["0%", "-12%"]);
-  const yFloat1 = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
   const yFloat2 = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
@@ -213,39 +212,6 @@ export default function Hero() {
           <span className="eyebrow text-[0.65rem]">SCROLL</span>
           <ArrowDown className="h-4 w-4 animate-bounce" />
         </motion.div>
-      </motion.div>
-
-      {/* Floating bottom-left: Featured project preview card */}
-      <motion.div
-        style={{ y: yFloat1 }}
-        initial={{ opacity: 0, x: -40, y: 40 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 1.1, delay: 1.5, ease }}
-        className="absolute bottom-24 left-4 lg:left-12 z-20 hidden lg:block"
-      >
-        <a
-          href="#work"
-          className="group flex items-center gap-4 p-3 pr-6 rounded-2xl bg-white/8 backdrop-blur-xl border border-white/15 hover:bg-white/15 hover:border-white/30 transition-all duration-500 max-w-[320px]"
-        >
-          <div className="relative h-16 w-16 rounded-xl overflow-hidden shrink-0">
-            <Image
-              src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=400&q=80"
-              alt="Featured project"
-              fill
-              sizes="64px"
-              className="object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="eyebrow text-white/55 text-[0.6rem] mb-1">
-              FEATURED · SCOTTSDALE
-            </div>
-            <div className="text-white text-sm font-medium leading-snug truncate">
-              Arcadia Granite Kitchen
-            </div>
-          </div>
-          <ArrowRight className="h-4 w-4 text-white/60 transition-all duration-500 group-hover:translate-x-1 group-hover:text-white shrink-0" />
-        </a>
       </motion.div>
 
       {/* Floating bottom-right: 5.0 review card */}

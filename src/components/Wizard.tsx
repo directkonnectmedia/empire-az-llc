@@ -17,8 +17,8 @@ import Reveal from "./Reveal";
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const SERVICE_OPTIONS = [
-  "Custom Cabinets",
-  "Countertops",
+  "Custom glass shower enclosure",
+  "Glass doors",
 ];
 
 const TIMELINE_OPTIONS = ["ASAP", "1 Month", "3 Months+"];
@@ -86,10 +86,6 @@ export default function Wizard() {
               </span>
               <span className="h-px w-10 bg-[color:var(--color-royal-dark)]" />
             </div>
-            <h2 className="font-display text-5xl md:text-7xl leading-[0.95]">
-              Start your{" "}
-              <em className="not-italic text-royal-gradient">transformation</em>
-            </h2>
             <p className="mt-6 text-[color:var(--color-charcoal)]/65 text-lg leading-relaxed">
               Tell us about your project. An Empire AZ LLC design specialist
               will reach out within 24 hours.

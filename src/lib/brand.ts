@@ -9,11 +9,10 @@ export const BRAND = {
   hours: "Mon–Sat 9am–5pm",
   rocNumber: "ROC #XXXXXX",
   taglineMarquee: [
-    "CUSTOM CABINETRY",
-    "LUXURY COUNTERTOPS",
-    "HANDCRAFTED INTERIORS",
-    "BUILT FOR YOU",
-    "ARIZONA VALLEY WIDE",
+    "Built for you. Arizona Valley-wide.",
+    "Custom glass shower enclosures.",
+    "Custom glass shower doors.",
+    "Specialist made.",
   ],
   serviceAreas: [
     "Scottsdale",
@@ -28,19 +27,19 @@ export const BRAND = {
 export const SERVICES = [
   {
     num: "01",
-    eyebrow: "Custom Cabinetry",
-    title: "Custom Cabinets",
-    body: "Built-to-order cabinetry tailored to your space, finish, and hardware. No templates — only your vision, executed with millimeter precision.",
+    eyebrow: "Shower Enclosures",
+    title: "Custom glass shower enclosures",
+    body: "Fast service.",
     image: "/custom-cabinets.png",
-    alt: "Hand-finished custom cabinetry with glass-front uppers and dark island",
+    alt: "Custom glass shower enclosure installation",
   },
   {
     num: "02",
-    eyebrow: "Surface Perfection",
-    title: "Countertops",
-    body: "Precision-fabricated countertops with seamless edges, custom profiles, and luxury finishes. Built to live with — beautifully — for decades.",
+    eyebrow: "Glass Showers",
+    title: "Glass showers",
+    body: "Frameless and semi-frameless shower glass tailored to your space — measured, fabricated, and installed with a flawless fit.",
     image: "/countertops.png",
-    alt: "Luxury veined marble island countertop with white cabinetry and pendant lighting",
+    alt: "Glass shower doors and panels",
   },
 ];
 
@@ -107,32 +106,27 @@ export const PORTFOLIO = [
   },
 ];
 
-export const PORTFOLIO_FILTERS = [
-  "All",
-  "Cabinets",
-  "Countertops",
-  "Full Renovations",
-];
+export const PORTFOLIO_FILTERS = ["All", "Full Renovations"];
 
 export const TESTIMONIALS = [
   {
     initials: "JD",
     quote:
-      "Empire AZ LLC rebuilt our entire kitchen with custom cabinets and a granite island — flawless craftsmanship from start to finish. Truly luxury work.",
+      "Beautiful, elegant, top-of-the-line service from consultation through installation. Empire AZ LLC made the whole process effortless.",
     name: "James D.",
     city: "Scottsdale, AZ",
   },
   {
     initials: "SM",
     quote:
-      "The countertops are stunning. Seamless edges, perfect color match, and installed faster than promised. The crew was a pleasure to host.",
+      "Absolutely top-of-the-line — stunning glass work, elegant lines, and a crew that treated our home like their own. Highly recommend.",
     name: "Sarah M.",
     city: "Paradise Valley, AZ",
   },
   {
     initials: "RK",
     quote:
-      "Our laundry room finally matches the rest of the home. Empire AZ LLC delivered true luxury and treated our house like their own.",
+      "Fast, spotless installation and truly beautiful results. This is the elegant, luxury-level service we were looking for in the Valley.",
     name: "Robert K.",
     city: "Gilbert, AZ",
   },

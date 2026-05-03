@@ -2,8 +2,8 @@ import Logo from "./Logo";
 import { BRAND } from "@/lib/brand";
 
 const SERVICES_COL = [
-  "Custom Cabinets",
-  "Countertops",
+  "Custom glass shower enclosures",
+  "Glass Doors",
 ];
 
 const STUDIO_COL = [
