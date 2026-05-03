@@ -1,7 +1,7 @@
 export const BRAND = {
   name: "Empire AZ LLC",
-  shortName: "Empire AZ",
-  owner: "Sergio",
+  shortName: "Empire AZ LLC",
+  owner: "Jesus",
   phone: "602-614-2187",
   phoneHref: "tel:+16026142187",
   email: "info@empireazllc.com",

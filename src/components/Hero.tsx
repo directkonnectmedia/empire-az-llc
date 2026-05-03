@@ -14,17 +14,9 @@ import Image from "next/image";
 import Marquee from "./Marquee";
 import AnimatedNumber from "./AnimatedNumber";
 import { EmpireMark } from "./Logo";
+import { BRAND } from "@/lib/brand";
 
 const ease = [0.22, 1, 0.36, 1] as const;
-
-const MATERIALS = [
-  "Granite",
-  "Quartz",
-  "Marble",
-  "Travertine",
-  "Hardwood",
-  "Hand-Forged Hardware",
-];
 
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
@@ -88,7 +80,7 @@ export default function Hero() {
           className="eyebrow text-white/55 text-[0.65rem]"
           style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
         >
-          EST · SERGIO · ARIZONA
+          EST · {BRAND.owner.toUpperCase()} · ARIZONA
         </div>
         <div
           className="eyebrow text-white/40 text-[0.6rem] tabular-nums"
@@ -130,7 +122,7 @@ export default function Hero() {
           >
             {/* Decorative micro-stats flanking the wordmark */}
             <div className="hidden xl:flex absolute left-0 top-1/2 -translate-y-1/2 flex-col items-end gap-3 pr-8">
-              <MicroStat label="Founded by" value="Sergio" />
+              <MicroStat label="Founded by" value={BRAND.owner} />
               <MicroStat label="Service Area" value="AZ Valley" />
             </div>
             <div className="hidden xl:flex absolute right-0 top-1/2 -translate-y-1/2 flex-col items-start gap-3 pl-8">
@@ -140,12 +132,12 @@ export default function Hero() {
 
             <h1 className="flex flex-wrap items-center justify-center gap-3 md:gap-6 font-display font-medium text-white text-[clamp(2.6rem,11vw,10rem)] leading-[0.85] tracking-[-0.04em]">
               <EmpireMark className="h-[0.95em] w-[0.95em] shrink-0" />
-              <span>Empire AZ</span>
+              <span>Empire AZ LLC</span>
             </h1>
             <div className="mt-4 flex items-center justify-center gap-4">
               <span className="h-px w-16 bg-white/50" />
               <span className="eyebrow text-white/80 text-[0.7rem] md:text-xs">
-                LLC · CRAFTED IN ARIZONA
+                CRAFTED IN ARIZONA
               </span>
               <span className="h-px w-16 bg-white/50" />
             </div>
@@ -164,28 +156,11 @@ export default function Hero() {
             </em>
           </motion.h2>
 
-          {/* Material chips */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.1, ease }}
-            className="mt-8 flex flex-wrap items-center justify-center gap-2"
-          >
-            {MATERIALS.map((m) => (
-              <span
-                key={m}
-                className="px-3 py-1.5 rounded-full bg-white/8 backdrop-blur-md border border-white/15 text-[0.7rem] tracking-wide text-white/80 hover:bg-white/15 hover:border-white/30 transition-all cursor-default"
-              >
-                {m}
-              </span>
-            ))}
-          </motion.div>
-
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.2, ease }}
+            transition={{ duration: 0.9, delay: 1.05, ease }}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <a href="#contact" className="btn btn-primary group">

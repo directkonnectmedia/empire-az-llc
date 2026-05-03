@@ -106,7 +106,7 @@ export default function Wizard() {
               <div className="relative">
                 <Sparkles className="h-7 w-7 text-[color:var(--color-royal-glow)] mb-6" />
                 <h3 className="font-display text-3xl mb-3 leading-tight">
-                  Talk to Sergio directly.
+                  Talk to {BRAND.owner} directly.
                 </h3>
                 <p className="text-white/70 text-sm leading-relaxed mb-10">
                   Skip the form — call or email us anytime. Every consult is

@@ -80,7 +80,7 @@ export default function Logo({
       <EmpireMark className={s.mark} textScale={markTextScale} />
       <div className="flex flex-col leading-none">
         <span className={`font-display font-medium tracking-tight ${text} ${s.text}`}>
-          Empire AZ
+          Empire AZ LLC
         </span>
         {withTagline && (
           <span
@@ -90,7 +90,7 @@ export default function Logo({
                 : "text-[color:var(--color-charcoal)]/55"
             } ${s.tag}`}
           >
-            LLC · LUXURY INTERIORS
+            LUXURY INTERIORS · ARIZONA
           </span>
         )}
       </div>
