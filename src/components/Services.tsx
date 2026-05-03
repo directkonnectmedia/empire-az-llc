@@ -103,7 +103,7 @@ function ServiceRow({
         <p className="text-[color:var(--color-charcoal)]/70 text-lg leading-relaxed mb-8">
           {service.body}
         </p>
-        <a href="#contact" className="btn btn-ghost group">
+        <a href="#contact" className="btn btn-primary group">
           Get a Free Quote
           <ArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </a>
