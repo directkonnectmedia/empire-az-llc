@@ -85,14 +85,12 @@ export default function Wizard() {
     body.append("entry.454001065", data.email);
     body.append("entry.805906014", data.phone);
     body.append("entry.1553931339", data.address);
-    body.append("pageHistory", "0");
-    body.append("fbzx", String(Math.floor(Math.random() * 1000000000000000000)));
     try {
       await fetch(formURL, {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: body.toString(),
+        body,
       });
       setStep(3);
     } catch {
