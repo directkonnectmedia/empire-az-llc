@@ -90,7 +90,7 @@ export default function Wizard() {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
+        body: body.toString(),
       });
       setStep(3);
     } catch {
