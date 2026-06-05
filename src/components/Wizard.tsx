@@ -74,25 +74,26 @@ export default function Wizard() {
     if (!canProceedFromStep()) return;
     setSubmitting(true);
     setSubmitError(false);
-    const formURL =
-      "https://docs.google.com/forms/d/e/1FAIpQLSe7OIXHbPQgqyfDdeyGUy-IeYVXyHOmE-v0z8yYRgT6iU6gFw/formResponse";
-    const body = new URLSearchParams();
-    body.append("entry.1200715368", data.services.join(", "));
-    body.append("entry.1115652031", data.budget);
-    body.append("entry.1612910158", data.timeline);
-    body.append("entry.1489919063", data.notes);
-    body.append("entry.1134508183", data.name);
-    body.append("entry.454001065", data.email);
-    body.append("entry.805906014", data.phone);
-    body.append("entry.1553931339", data.address);
     try {
-      await fetch(formURL, {
+      const res = await fetch("/api/submit-quote", {
         method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          services: data.services.join(", "),
+          budget: data.budget,
+          timeline: data.timeline,
+          notes: data.notes,
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          address: data.address,
+        }),
       });
-      setStep(3);
+      if (res.ok) {
+        setStep(3);
+      } else {
+        setSubmitError(true);
+      }
     } catch {
       setSubmitError(true);
     } finally {
