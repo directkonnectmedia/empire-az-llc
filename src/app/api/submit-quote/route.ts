@@ -16,7 +16,9 @@ export async function POST(req: NextRequest) {
     body.append("entry.454001065", data.email ?? "");
     body.append("entry.805906014", data.phone ?? "");
     body.append("entry.1553931339", data.address ?? "");
+    body.append("fvv", "1");
     body.append("pageHistory", "0");
+    body.append("draftResponse", "[]");
     body.append(
       "fbzx",
       String(Math.floor(Math.random() * 1_000_000_000_000_000_000))
@@ -29,9 +31,10 @@ export async function POST(req: NextRequest) {
       redirect: "follow",
     });
 
-    console.log("Google Forms response status:", response.status);
+    const responseText = await response.text();
+    console.log("Google Forms status:", response.status);
+    console.log("Google Forms body:", responseText.slice(0, 500));
 
-    // 400 means a bad payload (wrong entry IDs or missing required fields)
     if (response.status === 400) {
       return NextResponse.json(
         { ok: false, status: 400 },
@@ -39,7 +42,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Any other response (200, 302, etc.) is treated as success
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("submit-quote error:", err);
