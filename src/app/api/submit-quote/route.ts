@@ -26,18 +26,21 @@ export async function POST(req: NextRequest) {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: body.toString(),
-      redirect: "manual", // Google 302s on success — treat that as OK
+      redirect: "follow",
     });
 
-    // Google returns 200 or 302 on success, 400 on bad payload
-    if (response.status === 200 || response.status === 302 || response.status === 0) {
-      return NextResponse.json({ ok: true });
+    console.log("Google Forms response status:", response.status);
+
+    // 400 means a bad payload (wrong entry IDs or missing required fields)
+    if (response.status === 400) {
+      return NextResponse.json(
+        { ok: false, status: 400 },
+        { status: 502 }
+      );
     }
 
-    return NextResponse.json(
-      { ok: false, status: response.status },
-      { status: 502 }
-    );
+    // Any other response (200, 302, etc.) is treated as success
+    return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("submit-quote error:", err);
     return NextResponse.json({ ok: false }, { status: 500 });
