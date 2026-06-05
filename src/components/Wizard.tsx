@@ -38,6 +38,8 @@ type FormData = {
 
 export default function Wizard() {
   const [step, setStep] = useState(0);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
   const [data, setData] = useState<FormData>({
     services: [],
     budget: "",
@@ -67,10 +69,35 @@ export default function Wizard() {
     return true;
   };
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!canProceedFromStep()) return;
-    setStep(3);
+    setSubmitting(true);
+    setSubmitError(false);
+    const formURL =
+      "https://docs.google.com/forms/d/e/1FAIpQLSe7OIXHbPQgqyfDdeyGUy-IeYVXyHOmE-v0z8yYRgT6iU6gFw/formResponse";
+    const body = new URLSearchParams();
+    body.append("entry.1200715368", data.services.join(", "));
+    body.append("entry.1115652031", data.budget);
+    body.append("entry.1612910158", data.timeline);
+    body.append("entry.1489919063", data.notes);
+    body.append("entry.1134508183", data.name);
+    body.append("entry.454001065", data.email);
+    body.append("entry.805906014", data.phone);
+    body.append("entry.1553931339", data.address);
+    try {
+      await fetch(formURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
+      setStep(3);
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -442,14 +469,23 @@ export default function Wizard() {
                       <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
                     </button>
                   ) : (
-                    <button
-                      type="submit"
-                      disabled={!canProceedFromStep()}
-                      className="btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed group"
-                    >
-                      Submit Request
-                      <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
-                    </button>
+                    <div className="flex flex-col items-end gap-2">
+                      {submitError && (
+                        <p className="text-xs text-red-500">
+                          Something went wrong — please try again.
+                        </p>
+                      )}
+                      <button
+                        type="submit"
+                        disabled={!canProceedFromStep() || submitting}
+                        className="btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed group"
+                      >
+                        {submitting ? "Sending…" : "Submit Request"}
+                        {!submitting && (
+                          <ArrowRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1" />
+                        )}
+                      </button>
+                    </div>
                   )}
                 </div>
               )}
