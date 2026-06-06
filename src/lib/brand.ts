@@ -4,8 +4,8 @@ export const BRAND = {
   owner: "Jesus",
   phone: "602-614-2187",
   phoneHref: "tel:+16026142187",
-  email: "info@empireazllc.com",
-  emailHref: "mailto:info@empireazllc.com",
+  email: "empireazglass@gmail.com",
+  emailHref: "mailto:empireazglass@gmail.com",
   hours: "Mon–Sat 9am–5pm",
   rocNumber: "ROC #XXXXXX",
   taglineMarquee: [
